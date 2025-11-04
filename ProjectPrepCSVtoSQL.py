@@ -29,9 +29,8 @@ header=io.readline()
 for line in io:
     line=line.strip()
     line=line.split(",")
-    print(line)
     cursor.execute("""INSERT INTO employees(Username,Login_email,Identifier,First_Name,Last_Name)
-    VALUES(?,?,?,?,?)""",(list[0],list[1],list[2],list[3],list[4]))
+    VALUES(?,?,?,?,?)""",(line[0],line[1],line[2],line[3],line[4]))
     db.commit()
     print(line)
     
